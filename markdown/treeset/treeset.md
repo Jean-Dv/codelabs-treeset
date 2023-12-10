@@ -188,7 +188,144 @@ El método `ceiling(e)` es útil para encontrar el primer elemento igual o mayor
 
 ## Método `clear()`
 
+Duration: 00:01:00
+
+### Paso a paso:
+
+### Paso 1: Creación del Treeset y agrega elementos
+
+```java
+import java.io.*;
+import java.util.TreeSet;
+
+public class TreeSetDemo {
+    public static void main(String args[])
+    {
+        // Creating an empty TreeSet
+        TreeSet<String> tree = new TreeSet<String>();
+
+        // Use add() method to add elements into the Set
+        tree.add("Welcome");
+        tree.add("To");
+        tree.add("Geeks");
+        tree.add("4");
+        tree.add("Geeks");
+        tree.add("TreeSet");
+
+        // Displaying the TreeSet
+        System.out.println("TreeSet: " + tree);
+    }
+}
+```
+
+#### Paso 2: Uso del método `clear()`
+
+```java
+	 // Clearing the TreeSet using clear() method
+        tree.clear();
+
+        // Displaying the final tree
+        System.out.println("After clearing TreeSet: " + tree);
+    }
+```
+
+### Funcionamiento del método:
+
+se utiliza para eliminar todos los elementos de un TreeSet. El uso del método clear() solo borra todo el elemento del conjunto y no elimina el conjunto.
+
+Resultado esperado:
+
+```java
+TreeSet: [4, Geeks, To, TreeSet, Welcome]
+After clearing TreeSet: []
+```
+
+### Conclusión:
+
+- El propósito principal es proporcionar una forma conveniente de vaciar completamente el conjunto, eliminando todos los elementos existentes.
+
+- Este método es útil cuando se desea restablecer o reiniciar el conjunto, y su invocación resultará en un conjunto vacío.
+
+### Funcionamiento en un árbol de busqueda binaria
+
+Arbol normal sin aplicar el metodo
+![TreeSet without clear](img/clear1.png)
+
+Arbol depues del metodo clear()
+![TreeSet with clear](img/clear2.png)
+
 ## Método `clone()`
+
+Duration: 00:01:00
+
+### Paso a paso:
+
+### Paso 1: Creación del Treeset y agrega elementos
+
+```java
+import java.io.*;
+import java.util.TreeSet;
+
+public class TreeSetDemo {
+    public static void main(String args[]) {
+        // Creating an empty TreeSet
+        TreeSet<String> tree = new TreeSet<String>();
+
+        // Use add() method to add elements into the Set
+        tree.add("Welcome");
+        tree.add("To");
+        tree.add("Geeks");
+        tree.add("4");
+        tree.add("Geeks");
+        tree.add("TreeSet");
+
+        // Displaying the TreeSet
+        System.out.println("TreeSet: " + tree);
+   }
+}
+```
+
+#### Paso 2: Uso del método `clone()`
+
+```java
+	 // Creating a new cloned set
+        TreeSet cloned_set = new TreeSet();
+
+        // Cloning the set using clone() method
+        cloned_set = (TreeSet)tree.clone();
+    }
+```
+
+### Paso 3:imprimir en la consola el contenido del TreeSet clonado
+
+// Displaying the cloned_set
+System.out.println("The cloned TreeSet: " + cloned_set);
+
+### Funcionamiento del método:
+
+Se utiliza para devolver una copia superficial del conjunto de árboles mencionado. Simplemente crea una copia del conjunto.
+
+Resultado esperado:
+
+```java
+TreeSet: [4, Geeks, To, TreeSet, Welcome]
+The cloned TreeSet: [4, Geeks, To, TreeSet, Welcome]
+```
+
+Devuelve clon de la lista ingresada
+
+### Conclusión:
+
+- Se crea un nuevo 'TreeSet', pero los elementos dentro de este nuevo conjunto son los mismos objetos que los del conjunto original.No se clonan los elementos en sí.
+
+### Nota adicional:
+
+- Dado que no se clonan los elementos, si se modifican los elementos en el conjunto clonado, esos cambios también se reflejarán en el conjunto original y viceversa.
+
+### Funcionamiento en un árbol de busqueda binaria
+
+(img/clone.png)
+![TreeSet clone](img/clone.png)
 
 ## Método `comparator()`
 
@@ -245,9 +382,242 @@ Si el conjunto se creó utilizando el orden natural de los elementos, `comparato
 
 ## Método `contains(Object o)`
 
+Duration: 00:01:00
+
+### Paso a paso:
+
+### Paso 1: Creación del Treeset y agrega elementos
+
+```java
+import java.io.*;
+import java.util.TreeSet;
+
+public class TreeSetDemo {
+    // Importing required classes
+import java.io.*;
+import java.util.TreeSet;
+
+// Main class
+public class GFG {
+
+    // Main driver method
+    public static void main(String args[])
+    {
+
+        // Creating an empty TreeSet of string type
+        TreeSet<String> tree = new TreeSet<String>();
+
+        // Adding elements in TreeSet
+        // Using add() method to
+        tree.add("Welcome");
+        tree.add("To");
+        tree.add("Geeks");
+        tree.add("4");
+        tree.add("Geeks");
+        tree.add("TreeSet");
+
+        // Displaying the TreeSet
+        System.out.println("TreeSet: " + tree);
+   }
+}
+```
+
+#### Paso 2: Compruebe si hay un elemento específico en el TreeSet anterior
+
+             usando el método contains() de la clase TreeSet
+
+```
+// Printing a boolean value
+        System.out.println(
+            "Does the Set contains 'TreeSet'? "
+            + tree.contains("TreeSet"));
+    }
+}
+```
+
+### Funcionamiento del método:
+
+se utiliza para comprobar si un elemento específico está presente en el TreeSet o no. Así que, básicamente, se utiliza para comprobar si un TreeSet contiene algún elemento en particular.
+
+Resultado esperado:
+
+```java
+TreeSet: [4, Geeks, To, TreeSet, Welcome]
+Does the Set contains 'TreeSet'? true
+```
+
+### Conclusión:
+
+- La principal función del método 'contains' en un 'TreeSet' es verificar si un elemento específico está presente en el conjunto. El método devuelve 'true' si el elemento está presente y 'false' en caso contrario.
+
+### Funcionamiento en un árbol de busqueda binaria
+
+1. Comienza en la raíz "Welcome".
+2. Comparación: "treeset" se compara con "Welcome". Dado que "treeset" es mayor lexicográficamente, la búsqueda se dirige hacia la derecha.
+3. Ahora estamos en el nodo "To".
+4. Comparación: "treeset" se compara con "To". Dado que "treeset" es mayor lexicográficamente, la búsqueda se dirige hacia la derecha.
+5. Ahora estamos en el nodo "TreeSet".
+6. Comparación: "treeset" se compara con "TreeSet". Dado que son iguales, se ha encontrado "treeset".
+
+Arbol Normal
+![TreeSet contains](img/contains1.png)
+Dspues de aplicar el metodo contains()
+![TreeSet contains](img/contains2.png)
+
 ## Método `descendingIterator?()`
 
+Duration: 00:01:00
+
+### Paso a paso:
+
+### Paso 1: Creación del Treeset y agrega elementos
+
+```java
+import java.util.*;
+
+public class GFG1 {
+    public static void main(String[] argv) throws Exception
+    {
+        try {
+
+            // create tree set object
+            TreeSet<Integer> treeadd = new TreeSet<Integer>();
+
+            // populate the TreeSet using add() method
+            treeadd.add(10);
+            treeadd.add(20);
+            treeadd.add(30);
+            treeadd.add(40);
+
+            // Print the TreeSet
+            System.out.println("TreeSet: " + treeadd);
+   }
+}
+```
+
+#### Paso 2: Creación el Iterador Descendente usando el metodo descendingIterator()
+
+```java
+// Printing a boolean value
+     Iterator<Integer>iterator = treeadd.descendingIterator();
+    }
+}
+```
+
+### paso 3: Impresión de los Valores Utilizando el Iterador Descendente
+
+```java
+System.out.println("\nValues using DescendingIterator:");
+while (iterator.hasNext()) {
+    System.out.println("Value : " + iterator.next());
+}
+```
+
+### Funcionamiento del método:
+
+se utiliza para devolver un iterador sobre los elementos de este conjunto en orden descendente.
+
+Resultado esperado:
+
+```java
+TreeSet: [10, 20, 30, 40]
+
+Values using DescendingIterator:
+Value : 40
+Value : 30
+Value : 20
+Value : 10
+```
+
+### Conclusión:
+
+- Este método es útil cuando se necesita recorrer los elementos en dirección opuesta al orden natural del conjunto.
+
+### Funcionamiento en un árbol de busqueda binaria
+
+Arbol antes de aplicar el metodo desendinfIterator()
+![TreeSet descendingIterator](img/DesendingIterator1.png)
+Despues de aplicar el metodo desendingIterator()
+![TreeSet descendingIterator](img/DesendingIterator2.png)
+
 ## Método `descendingSet()`
+
+Duration: 00:01:00
+
+### Paso a paso:
+
+### Paso 1: Creación del Treeset y agrega elementos
+
+```java
+import java.util.*;
+
+public class GFG1 {
+    public static void main(String[] argv)
+        throws Exception
+    {
+        try {
+
+            // create tree set object
+            TreeSet<String> treeadd = new TreeSet<String>();
+
+            // populate the TreeSet using add() method
+            treeadd.add("A");
+            treeadd.add("B");
+            treeadd.add("C");
+            treeadd.add("D");
+
+            // Print the TreeSet
+            System.out.println("TreeSet: " + treeadd);
+```
+
+#### Paso 2: Creación el Iterador Descendente usando el metodo descendingSet()
+
+```java
+ NavigableSet<String>treereverse = treeadd.descendingSet();
+
+ // getting iterated view of NavigableSet
+ Iterator<String> iterator = treereverse.iterator();
+
+```
+
+### paso 3: Impresión de los Valores
+
+```java
+System.out.println("\nValues using DescendingSet:");
+
+            // printing the integrated value
+            while (iterator.hasNext()) {
+                System.out.println("Value : "
+                                   + iterator.next());
+            }
+```
+
+### Funcionamiento del método:
+
+se utiliza para devolver una vista en orden inverso de los elementos contenidos en este conjunto. El conjunto descendente está respaldado por este conjunto, por lo que los cambios en el conjunto se reflejan en el conjunto descendente y viceversa
+
+Resultado esperado:
+
+```java
+TreeSet: [A, B, C, D]
+
+Values using DescendingSet:
+Value : D
+Value : C
+Value : B
+Value : A
+```
+
+### Conclusión:
+
+-Devuelve una vista reversa del conjunto original, ordenada en orden descendente. Es importante destacar que descendingSet no crea un nuevo conjunto, sino que proporciona una vista inversa del conjunto existente. Cualquier cambio en el conjunto original se reflejará en la vista descendente y viceversa.
+
+### Funcionamiento en un árbol de busqueda binaria
+
+Arbol antes de aplicar el metodo desendingSet()
+![TreeSet descendingIterator](img/desendingset1.png)
+Despues de aplicar el metodo desendingSet()
+![TreeSet with clear](img/desendingset2.png)
 
 ## Método `first()`
 
@@ -590,6 +960,62 @@ El método `higher(e)` es útil para encontrar el primer elemento estrictamente 
 
 ## Método `isEmpty()`
 
+Duration: 00:01:00
+
+### Paso a paso:
+
+### Paso 1: Creación del Treeset y agrega elementos
+
+```java
+import java.util.*;
+import java.util.TreeSet;
+
+public class TreeSetDemo {
+    public static void main(String args[])
+    {
+        // Creating an empty HashSet
+        TreeSet<String> tree = new TreeSet<String>();
+
+        // Use add() method to add elements into the Set
+        tree.add("Welcome");
+        tree.add("To");
+        tree.add("Geeks");
+        tree.add("4");
+        tree.add("Geeks");
+        tree.add("TreeSet");
+
+        // Displaying the TreeSet
+        System.out.println("TreeSet: " + tree);
+```
+
+#### Paso 2:Verificación si el conjunto está vacío
+
+```java
+ // Check for the empty set
+        System.out.println("Is the set empty? " + tree.isEmpty());
+```
+
+### Funcionamiento del método:
+
+se utiliza para comprobar y verificar si un TreeSet está vacío o no. Devuelve True si el TreeSet está vacío, de lo contrario devuelve False.
+
+Resultado esperado:
+
+```java
+TreeSet: [4, Geeks, To, TreeSet, Welcome]
+Is the set empty? false
+```
+
+### Conclusión:
+
+-Método isEmpty en un TreeSet es que proporciona una forma conveniente de verificar si el conjunto está vacío o no. El método devuelve true si el conjunto no contiene elementos y false si tiene al menos un elemento.
+
+### Demostración en un árbol de busqueda binaria:
+
+La operación isEmpty() simplemente verificará si el TreeSet tiene al menos un elemento, es decir, si la raíz del árbol (el nodo "Welcome") no es null.
+
+![TreeSet with clear](img/isEmpty.png)
+
 ## Método `iterator()`
 
 Duration: 00:01:00
@@ -713,6 +1139,69 @@ El método `last()` es útil para obtener el elemento más alto del conjunto sin
 - No hay impacto en la estructura del árbol ya que el método solo devuelve el último elemento sin realizar ninguna modificación en el conjunto original.
 
 ## Método `lower(E e)`
+
+Duration: 00:01:00
+
+### Paso a paso:
+
+### Paso 1: Creación del Treeset y agrega elementos
+
+```java
+import java.util.TreeSet;
+public class GFG {
+    public static void main(String args[])
+    {
+        TreeSet<Integer> tree = new TreeSet<Integer>();
+
+        // Add elements to this TreeSet
+        tree.add(10);
+        tree.add(5);
+        tree.add(8);
+        tree.add(1);
+        tree.add(11);
+        tree.add(3);
+```
+
+#### Paso 2:Llamar al metodo tree.lower con la condicion deseada
+
+```java
+ System.out.println(tree.lower(15));
+```
+
+### Funcionamiento del método:
+
+se utiliza para devolver el elemento más grande de este conjunto que es estrictamente menor que el elemento dado.
+
+Resultado esperado:
+
+```java
+11
+```
+
+### Conclusión:
+
+-El propósito principal de lower es obtener el elemento más grande en el TreeSet que sea estrictamente menor que el valor proporcionado como argumento.
+
+- el método tree.lower(elemento) en un TreeSet de Java devuelve el mayor elemento estrictamente menor que el valor especificado (elemento)
+
+### Funcionamiento en un arbol de busqueda binaria:
+
+1.Comienzas en la raíz del árbol.
+2.Comparas el elemento buscado con el elemento en el nodo actual.
+3.Si son iguales, has encontrado el elemento y la búsqueda se completa.
+4.Si el elemento buscado es menor que el elemento en el nodo actual, te mueves al subárbol izquierdo.
+5.Si el elemento buscado es mayor que el elemento en el nodo actual, te mueves al subárbol derecho.
+6.Se Repiten los pasos 2 y 3 hasta que encuentres el elemento buscado o llegues a un nodo que sea null, indicando que el elemento no está presente en el árbol.
+
+Arbol Normal
+![TreeSet with clear](img/lower1.png)
+Despues de aplicar el metodo lower()
+![TreeSet with clear](img/lower2.png)
+
+### Nota adicional:
+
+-Si no existe ningún elemento de este tipo en esta colección TreeSet, este método devuelve un valor NULL
+-Solo se necesita un parámetro ele. Es el elemento a partir del cual se determina el mayor valor del conjunto que es estrictamente menor que este valor.
 
 ## Método `pollFirst()`
 
